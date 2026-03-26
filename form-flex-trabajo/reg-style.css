@@ -22,7 +22,7 @@ body{
     padding: 30px;
     border-radius:20px;
     width: 300px;
-    gap:10px;
+    gap:15px;
 
 }
 .login-title{
@@ -44,4 +44,17 @@ input{
     font-weight: bold;
     cursor:pointer;
     height: 30px;
+}
+.link{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ff6a3b;
+    width: 150px;
+    border-radius: 5px;
+    align-self: center;
+}
+.linkA{
+    color: white;
 }

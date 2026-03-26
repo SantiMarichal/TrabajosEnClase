@@ -43,4 +43,18 @@ input{
     border-radius: 5px;
     font-weight: bold;
     cursor:pointer;
+    height: 30px;
+}
+.link{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ff6a3b;
+    width: 150px;
+    border-radius: 5px;
+    align-self: center;
+}
+.linkA{
+    color: white;
 }
