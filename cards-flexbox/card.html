@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01 - Card</title>
+    <style>
+        :root{
+            --color-primary:#0075BE;
+            --color-dark:#333;
+            --color-light:#f4f4f4;
+        }
+        /* Para limpiar el formato por defecto de los navegadores */
+        *{
+            box-sizing: border-box;
+            margin:0;
+            padding:0;
+        }
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: var(--color-dark);
+        }
+        .main-container{
+            display: flex;
+            align-items: center; /* vertical */
+            justify-content: center;/* horizontal*/
+            height: 100vh;
+        }
+        .card{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgb(255, 255, 255);
+            border-radius:10px;
+            padding: 20px;
+            width: 250px;
+            text-align: center;
+            box-shadow:0 5px 10px rgba(0, 0, 0, 0.1) ;
+        }
+        .card figure{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+        }
+        .card a{
+            color: black;
+            text-decoration: none;
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: var(--color-primary);
+        }
+        .card-img{
+            height: 128px;
+            width: 128px;
+        }   
+    </style>
+</head>
+<body>
+    <main class="main-container">
+        <div class="card">
+            <h1>Swampert</h1>
+            <figure>
+                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/260.png" alt="Imagen Swampert" class="card-img">
+                <figcaption class="card-text">Tipo: Agua/Tierra</figcaption>
+            </figure>
+            <a href="https://www.wikidex.net/wiki/Swampert" target="_self">Ver masardopolis</a>
+        </div>
+    </main>
+</body>
+</html>
