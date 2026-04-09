@@ -18,16 +18,28 @@
         }
         body{
             font-family: Arial, Helvetica, sans-serif;
-            background-color: var(--color-dark);
+            /*background-color: var(--color-dark);*/
+            background-image:url(wallpaper.jpg);
+            background-size: cover;
+            background-repeat:no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            height: 100vh;
+
+        }
+    
+        .header{
+            color:pink;
+            display: flex;
+            justify-content: center;
+            margin: 24px 0px;
         }
         .main-container{
             display: flex;
             align-items: center; /* vertical */
             justify-content: center;/* horizontal*/
-            height: 100vh;
             flex-wrap: wrap;
             gap: 20px;
-            
         }
         .card{
             display: flex;
@@ -38,7 +50,7 @@
             padding: 20px;
             width: 250px;
             text-align: center;
-            box-shadow:0 5px 10px rgba(0, 0, 0, 0.1) ;
+            box-shadow: 0px 0px 20px rgb(0, 255, 64);
             
         }
         .card figure{
@@ -53,6 +65,7 @@
             padding: 10px;
             border-radius: 5px;
             background-color: var(--color-primary);
+            box-shadow: 5px 10px 15px rgb(56, 56, 56);
         }
         .card a:hover{
             background-color: rgb(67, 141, 238);
@@ -61,9 +74,17 @@
             height: 128px;
             width: 128px;
         }   
+        .footer{
+            display: flex;
+            justify-content: center;
+            color: pink;
+        }
     </style>
 </head>
 <body>
+    <header class="header">
+        <h1>Pokédex</h1>
+    </header>
     <main class="main-container">
         <div class="card">
             <h1>Swampert</h1>
@@ -72,7 +93,7 @@
                 <figcaption class="card-text">Tipo: Agua/Tierra</figcaption>
                 <figcaption class="card-legend">Leyenda: <br> Swampert (ラグラージ Laglarge en japonés) es un Pokémon de tipo agua/tierra introducido en la tercera generación. Es la evolución de Marshtomp.</figcaption>
             </figure>
-            <a href="https://www.wikidex.net/wiki/Swampert" target="_self">Ver masardopolis</a>
+            <a href="https://www.wikidex.net/wiki/Swampert" target="_self">Ver mas</a>
         </div>
         <div class="card">
             <h1>Charizard</h1>
@@ -82,7 +103,7 @@
                 <figcaption class="card-legend">Leyenda: <br>Charizard (リザードン Lizardon en japonés) es un Pokémon de tipo fuego/volador introducido en la primera generación. Es la evolución de Charmeleon.
                     </figcaption>
             </figure>
-            <a href="https://www.wikidex.net/wiki/Charizard" target="_self">Ver masardopolis</a>
+            <a href="https://www.wikidex.net/wiki/Charizard" target="_self">Ver mas</a>
         </div>
         <div class="card">
             <h1>Amoonguss</h1>
@@ -91,16 +112,16 @@
                 <figcaption class="card-text">Tipo: Planta/Veneno</figcaption>
                 <figcaption class="card-legend">Leyenda: <br>Amoonguss (モロバレル Morobareru en japonés) es un Pokémon de tipo planta/veneno introducido en la quinta generación. Es la evolución de Foongus.</figcaption>
             </figure>
-            <a href="https://www.wikidex.net/wiki/Amoonguss" target="_self">Ver masardopolis</a>
+            <a href="https://www.wikidex.net/wiki/Amoonguss" target="_self">Ver mas</a>
         </div>
         <div class="card">
             <h1>Darkrai</h1>
             <figure>
                 <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/491.png" alt="Imagen Darkrai" class="card-img">
                 <figcaption class="card-text">Tipo: Siniestro</figcaption>
-                <figcaption class="card-legend">Leyenda: <br>Darkrai (ダークライ Darkrai en japonés) es un Pokémon singular de tipo siniestro introducido en la cuarta generación.</figcaption>
+                <figcaption class="card-legend">Leyenda: <br>Darkrai (ダークライ Darkrai en japonés) es un Pokémon singular de tipo siniestro introducido en la cuarta generación. lorem ipsum dolor sit amet</figcaption>
             </figure>
-            <a href="https://www.wikidex.net/wiki/Darkrai" target="_self">Ver masardopolis</a>
+            <a href="https://www.wikidex.net/wiki/Darkrai" target="_self">Ver mas</a>
         </div>
         <div class="card">
             <h1>Greninja</h1>
@@ -109,7 +130,7 @@
                 <figcaption class="card-text">Tipo: Agua/Siniestro</figcaption>
                 <figcaption class="card-legend">Leyenda: <br>Greninja (ゲッコウガ Gekkouga en japonés) es un Pokémon de tipo agua/siniestro introducido en la sexta generación. Es la evolución de Frogadier.</figcaption>
             </figure>
-            <a href="https://www.wikidex.net/wiki/Greninja" target="_self">Ver masardopolis</a>
+            <a href="https://www.wikidex.net/wiki/Greninja" target="_self">Ver mas</a>
         </div>
         <div class="card">
             <h1>Metagross</h1>
@@ -118,8 +139,11 @@
                 <figcaption class="card-text">Tipo: Acero/Psiquico</figcaption>
                 <figcaption class="card-legend">Leyenda: <br>Metagross (メタグロス Metagross en japonés) es un Pokémon de tipo acero/psíquico introducido en la tercera generación. Es la evolución de Metang.</figcaption>
             </figure>
-            <a href="https://www.wikidex.net/wiki/Metagross" target="_self">Ver masardopolis</a>
+            <a href="https://www.wikidex.net/wiki/Metagross" target="_self">Ver mas</a>
         </div>
     </main>
+    <footer class="footer">
+        <p>Layout con cards</p>
+    </footer>
 </body>
 </html>
