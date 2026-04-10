@@ -10,21 +10,24 @@
             margin:0;
             padding:0;
         }
+        body{
+            height: 100hv;
+        }
         .header{
             display: flex;
-            flex-wrap:wrap;
-            width: 700px;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .icon{
+            display: flex;
+            align-items: center;
         }
         .imagen{
             width: 100px;
             border-radius: 50%;
         }
-        .h1Head{
-            margin-top: 30px;
-        }
         .usuario{
-            display: flex;
-            flex-direction: row-reverse;
+            margin: 0 auto;
         }
         .h1{
             text-align: center;
@@ -57,16 +60,48 @@
             background-color: var(--color-primary);
             box-shadow: 5px 10px 15px rgb(56, 56, 56);
         }
+        .morgana{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .seraphine{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .blitzcrank{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .table{
+            display: flex;
+            flex-direction: column-reverse;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            width:1000px;
+
+        }
+        td{
+            padding: 10px;
+        }
+        .footer{
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
     </style>
 </head>
 <body>
     <header>
         <div class="header">
-            <img src="lol.jpg" class="imagen">
-            <h1 class="h1Head">League of Legends</h1>
-        </div>
-        <div class="usuario">
-            <h2>SantiCrack88M</h2>
+            <div class="icon">
+                <img src="lol.jpg" class="imagen">
+                <h1 class="h1Head">League of Legends</h1>
+            </div>
+            <div class="usuario">
+                <h2>SantiCrack88M</h2>
+            </div>
         </div>
     </header>
     <hr>
@@ -74,42 +109,94 @@
         <h1 class="h1">PERSONAJES</h1>
         <div class="morgana">
             <div class="card">
-            <h1>Morgana</h1>
-            <figure>
-                <img src="Morgana.jpg" alt="Imagen Morgana" class="card-img">
-                <figcaption class="card-text">Linea: Support</figcaption>
-            </figure>
-            <a href="https://wiki.leagueoflegends.com/en-us/Morgana" target="_self">Ver mas</a>
+                    <h1>Morgana</h1>
+                    <figure>
+                    <img src="Morgana.jpg" alt="Imagen Morgana" class="card-img">
+                    <figcaption class="card-text">"Al forjar mi propio camino, acepto el dolor."</figcaption>
+                    </figure>
+                    <a href="https://wiki.leagueoflegends.com/en-us/Morgana" target="_self">Ver mas</a>
+            </div>
+            <div class="table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nacion</th>
+                            <th>Roles</th>
+                            <th>Historia</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Demacia</td>
+                            <td>Support</td>
+                            <td>Por razones del destino o por azar, Morgana y su hermana nacieron en un mundo azotado por el conflicto. Las catastróficas Guerras Rúnicas habían arrasado con la mayor parte de Valoran y de Shurima; parecían estar empeñadas en sepultar incluso las cimas del Targón. Los padres de Morgana, Mihira y Kilam, conocían las leyendas que aseveraban que la gran montaña otorgaba poderes divinos. Si querían salvar a su tribu, el único camino que vislumbraban como opción era emprender el viaje largo y peligroso.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-        <div class="table">
-            <table>
-                <thead>
-                 <tr>
-                    <th>Nacion</th>
-                    <th>Roles</th>
-                    <th>Historia</th>
-                </tr>
-                </thead>
-            </table>
+        <div class="seraphine">
+            <div class="card">
+                <h1>Seraphine</h1>
+                <figure>
+                    <img src="seraphine.jpg" alt="Imagen Seraphine" class="card-img">
+                    <figcaption class="card-text">"Es más fácil escuchar a los demás que escucharte a ti mismo."</figcaption>
+                </figure>
+                <a href="https://wiki.leagueoflegends.com/en-us/Seraphine" target="_self">Ver mas</a>
+            </div>
+            <div class="table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nacion</th>
+                            <th>Roles</th>
+                            <th>Historia</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Piltover</td>
+                            <td>Support</td>
+                            <td>Seraphine, de padres zaunitas, nació en Piltover y es capaz de escuchar las almas de los demás. El mundo le canta y ella le devuelve la canción. Aunque esos sonidos le resultaban abrumadores cuando era pequeña, ahora le sirven de inspiración, y transforma el caos en una sinfonía. Actúa para ambas ciudades con la intención de recordarles a sus ciudadanos que no están solos, que la unión hace la fuerza y que, a los ojos de Seraphine, su potencial es infinito.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
+        <div class="blitzcrank">
+            <div class="card">
+                <h1>Blitzcrank</h1>
+                <figure>
+                    <img src="blitzcrank.jpg" alt="Imagen Blitzcrank" class="card-img">
+                    <figcaption class="card-text">"Encendido y listo para el servicio."</figcaption>
+                </figure>
+                <a href="https://wiki.leagueoflegends.com/en-us/Blitzcrank" target="_self">Ver mas</a>
+            </div>
+            <div class="table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nacion</th>
+                            <th>Roles</th>
+                            <th>Historia</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Zaun</td>
+                            <td>Support</td>
+                            <td>Blitzcrank es un autómata gigantesco y casi indestructible de Zaun, que originalmente fue creado para deshacerse de los desechos tóxicos. Sin embargo, él cree que su propósito principal era demasiado limitado, así que modificó su propia forma para poder servir mejor a la frágil gente del Sumidero. Blitzcrank utiliza su fuerza y durabilidad desinteresadamente para proteger a los demás, extendiendo su puño de metal o lanzando una ráfaga de energía para someter a quienes busquen causar problemas.</td>                        
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-        <div class="card">
-            <h1>Seraphine</h1>
-            <figure>
-                <img src="seraphine.jpg" alt="Imagen Seraphine" class="card-img">
-                <figcaption class="card-text">Linea: Support</figcaption>
-            </figure>
-            <a href="https://wiki.leagueoflegends.com/en-us/Seraphine" target="_self">Ver mas</a>
-        </div>
-        <div class="card">
-            <h1>Blitzcrank</h1>
-            <figure>
-                <img src="blitzcrank.jpg" alt="Imagen Blitzcrank" class="card-img">
-                <figcaption class="card-text">Linea: Support</figcaption>
-            </figure>
-            <a href="https://wiki.leagueoflegends.com/en-us/Blitzcrank" target="_self">Ver mas</a>
-        </div>
-        
     </main>
+    <hr>
+    <footer>
+        <div class="footer">
+            <p> Santiago Marichal </p>
+        </div>
+    </footer>
 </body>
 </html>
