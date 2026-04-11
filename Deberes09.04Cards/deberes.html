@@ -11,31 +11,41 @@
             padding:0;
         }
         body{
+            font-family: Arial, Helvetica, sans-serif;
             height: 100hv;
         }
         .header{
             display: flex;
             align-items: center;
             justify-content: space-between;
+            height: 135px;
         }
         .icon{
             display: flex;
             align-items: center;
         }
         .imagen{
-            width: 100px;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
+            margin-left: 10px;
         }
         .usuario{
-            margin: 0 auto;
+            margin-right:15px;
         }
-        .h1{
+        .h1Head{
             text-align: center;
+            margin-left: 15px;
         }
         .main-container{
-            
+            color: white;
+            background-color: grey;
+        }
+        .h1Per{
+            text-align: center;
         }
         .card{
+            color:black;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -81,10 +91,13 @@
             width:1000px;
 
         }
-        td{
+        th, td{
             padding: 10px;
+            border: 1px solid black;
         }
         .footer{
+            color:white;
+            background-color: black;
             height: 40px;
             display: flex;
             align-items: center;
@@ -96,7 +109,7 @@
     <header>
         <div class="header">
             <div class="icon">
-                <img src="lol.jpg" class="imagen">
+                <img src="loll.jpg" class="imagen">
                 <h1 class="h1Head">League of Legends</h1>
             </div>
             <div class="usuario">
@@ -106,13 +119,13 @@
     </header>
     <hr>
     <main class="main-container">
-        <h1 class="h1">PERSONAJES</h1>
+        <h1 class="h1Per">PERSONAJES</h1>
         <div class="morgana">
             <div class="card">
                     <h1>Morgana</h1>
                     <figure>
-                    <img src="Morgana.jpg" alt="Imagen Morgana" class="card-img">
-                    <figcaption class="card-text">"Al forjar mi propio camino, acepto el dolor."</figcaption>
+                        <img src="Morgana.jpg" alt="Imagen Morgana" class="card-img">
+                        <figcaption class="card-text">"Al forjar mi propio camino, acepto el dolor."</figcaption>
                     </figure>
                     <a href="https://wiki.leagueoflegends.com/en-us/Morgana" target="_self">Ver mas</a>
             </div>
