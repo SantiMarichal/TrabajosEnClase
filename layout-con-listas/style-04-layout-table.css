@@ -122,8 +122,15 @@ th {
     background-color: var(--color-dark);
     color: white;
 }
+
+/*
+
+2) Pseudo clase que selecciona el primer hijo del contenedor que tenga esa clase
+3) Pseudo clase que selecciona el ultimo hijo del contenedor que tenga esa clase
+
+1) Pseudo clase que selecciona un hijo en particular o un grupo
 /* tbody tr:nth-child(odd) { */
-tbody tr:nth-child(even) {
+tbody tr:nth-child(even) { /* estilos tipo cebra (zebra en ingles)*/
     background-color: #bbb9;
 }
 th, td {
