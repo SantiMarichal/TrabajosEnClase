@@ -63,6 +63,8 @@
 
         .main-container {
             color: white;
+            flex-direction: column;
+            flex-wrap: wrap;
         }
 
         .h2Per {
@@ -101,31 +103,29 @@
 
         .morgana {
             display: flex;
-            flex-wrap: wrap;
-            align-items: flex-start;
-            justify-content: center;
-            gap:30px;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
         }
 
         .seraphine {
             display: flex;
-            flex-wrap: wrap;
-            align-items: flex-start;
-            justify-content: center;
-            gap:30px;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
         }
 
         .blitzcrank {
             display: flex;
-            flex-wrap: wrap;
-            align-items: flex-start;
-            justify-content: center;
-            gap:30px;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
         }
 
         .table {
-            width: 1000px;
-            margin-top: 120px;
+            width: 900px;
+            margin-top: 50px;
+            margin-bottom: 50px;
             background-color: rgba(0, 0, 0, 0.644);
         }
 
@@ -135,6 +135,31 @@
             border: 1px solid black;
         }
 
+        /*si la pantalla mide 900px o menos, aplica estos estilos*/
+        @media (max-width: 1800px) {
+            .morgana {
+                flex-direction: row;
+                justify-content: center;
+                align-items: flex-start;
+            }
+
+            .seraphine {
+                flex-direction: row;
+                justify-content: center;
+                align-items: flex-start;
+            }
+
+            .blitzcrank {
+                flex-direction: row;
+                justify-content: center;
+                align-items: flex-start;
+            }
+
+            .table {
+                width: 1000px;
+            }
+        }
+
         .footer {
             color: white;
             background-color: black;
@@ -142,7 +167,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-top: 50px;
         }
     </style>
 </head>
@@ -150,7 +174,8 @@
 <body class="faculty-glyphic-regular">
     <header>
         <nav class="header">
-            <div class="icon"> <img src="lol.jpg" class="imagen">
+            <div class="icon">
+                <img src="lol.jpg" class="imagen">
                 <h1 class="h1Head">League of Legends</h1>
             </div>
             <div class="usuario">
@@ -164,9 +189,11 @@
             <div class="morgana">
                 <div class="card">
                     <h1>Morgana</h1>
-                    <figure> <img src="Morgana.jpg" alt="Imagen Morgana" class="card-img">
+                    <figure>
+                        <img src="Morgana.jpg" alt="Imagen Morgana" class="card-img">
                         <figcaption class="card-text">"Al forjar mi propio camino, acepto el dolor."</figcaption>
-                    </figure> <a href="https://wiki.leagueoflegends.com/en-us/Morgana" target="_self">Ver mas</a>
+                    </figure>
+                    <a href="https://wiki.leagueoflegends.com/en-us/Morgana" target="_self">Ver mas</a>
                 </div>
                 <div class="table">
                     <table>
@@ -182,12 +209,12 @@
                                 <td>Demacia</td>
                                 <td>Support</td>
                                 <td>Por razones del destino o por azar, Morgana y su hermana nacieron en un mundo
-                                    azotado por el conflicto. Las catastróficas Guerras Rúnicas habían arrasado con la
-                                    mayor parte de Valoran y de Shurima; parecían estar empeñadas en sepultar incluso
-                                    las cimas del Targón. Los padres de Morgana, Mihira y Kilam, conocían las leyendas
-                                    que aseveraban que la gran montaña otorgaba poderes divinos. Si querían salvar a su
-                                    tribu, el único camino que vislumbraban como opción era emprender el viaje largo y
-                                    peligroso.</td>
+                                    azotado por el conflicto. Las catastróficas Guerras Rúnicas habían arrasado con
+                                    la mayor parte de Valoran y de Shurima; parecían estar empeñadas en sepultar
+                                    incluso las cimas del Targón. Los padres de Morgana, Mihira y Kilam, conocían
+                                    las leyendas que aseveraban que la gran montaña otorgaba poderes divinos. Si
+                                    querían salvar a su tribu, el único camino que vislumbraban como opción era
+                                    emprender el viaje largo y peligroso.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -216,15 +243,12 @@
                             <tr>
                                 <td>Piltover</td>
                                 <td>Support</td>
-                                <td>Seraphine, de padres zaunitas, nació en Piltover y es capaz de escuchar las almas de
-                                    los
-                                    demás. El mundo le canta y ella le devuelve la canción. Aunque esos sonidos le
-                                    resultaban abrumadores cuando era pequeña, ahora le sirven de inspiración, y
-                                    transforma
-                                    el caos en una sinfonía. Actúa para ambas ciudades con la intención de recordarles a
-                                    sus
-                                    ciudadanos que no están solos, que la unión hace la fuerza y que, a los ojos de
-                                    Seraphine, su potencial es infinito.</td>
+                                <td>Seraphine, de padres zaunitas, nació en Piltover y es capaz de escuchar las
+                                    almas de los demás. El mundo le canta y ella le devuelve la canción. Aunque esos
+                                    sonidos le resultaban abrumadores cuando era pequeña, ahora le sirven de
+                                    inspiración, y transforma el caos en una sinfonía. Actúa para ambas ciudades con
+                                    la intención de recordarles a sus ciudadanos que no están solos, que la unión
+                                    hace la fuerza y que, a los ojos de Seraphine, su potencial es infinito.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -253,21 +277,19 @@
                                 <td>Zaun</td>
                                 <td>Support</td>
                                 <td>Blitzcrank es un autómata gigantesco y casi indestructible de Zaun, que
-                                    originalmente
-                                    fue creado para deshacerse de los desechos tóxicos. Sin embargo, él cree que su
-                                    propósito principal era demasiado limitado, así que modificó su propia forma para
-                                    poder
-                                    servir mejor a la frágil gente del Sumidero. Blitzcrank utiliza su fuerza y
-                                    durabilidad
-                                    desinteresadamente para proteger a los demás, extendiendo su puño de metal o
-                                    lanzando
-                                    una ráfaga de energía para someter a quienes busquen causar problemas.</td>
+                                    originalmente fue creado para deshacerse de los desechos tóxicos. Sin embargo,
+                                    él cree que su propósito principal era demasiado limitado, así que modificó su
+                                    propia forma para poder servir mejor a la frágil gente del Sumidero. Blitzcrank
+                                    utiliza su fuerza y durabilidad desinteresadamente para proteger a los demás,
+                                    extendiendo su puño de metal o lanzando una ráfaga de energía para someter a
+                                    quienes busquen causar problemas.</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
     </main>
+    <hr>
     <footer>
         <div class="footer">
             <p> Santiago Marichal </p>
