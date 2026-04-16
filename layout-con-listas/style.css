@@ -1,0 +1,102 @@
+:root {
+    --color-primary: #ffcc00;
+    --color-dark: #333;
+    --color-dark-hover:#444;
+    --color-light: #f4f4f4;
+}
+/* Para limpiar el formato por defecto de los navegadores */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--color-light);
+    height: 100vh;
+}
+
+/* --- Estilos para agregar en clase 16/04 --- */
+.header{
+    padding:10px;
+}
+.navbar-left{
+    display: flex;
+    gap:5px;
+}
+.navbar-left img{
+    border-radius: 12px;
+}
+.container{
+    display: flex;
+}
+.sidebar{
+    background-color: var(--color-dark);
+    width:200px;
+    color: #ffff;
+}
+.main-container{
+    margin: 20px;
+    flex:1; /* hacemos que el contenedor ocupe todo el espacio disponible*/
+}
+.main-container h2{
+    text-align: center;
+    font-weight: inherit;
+    margin-bottom: 20px;
+}
+.cards-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:24px;
+}
+.menu-item{
+    padding: 15px;
+    border-bottom: 1px solid var(--color-dark);
+}
+.menu-item:hover{
+    background-color: var(--color-dark-hover);
+    cursor: pointer;
+}
+.menu-item:active{
+    background-color: var(--color-primary);
+    color:black;
+}
+/* --- Estilos para agregar en clase 16/04 --- */
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+.card figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.card-img {
+    height: 128px;
+    width: 128px;
+}
+.card a {
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: var(--color-primary);
+    margin-top: 15px;
+}
+.card a:hover {
+    background-color: #e6b800;
+}
+.footer {
+    color: var(--color-dark);
+    display: flex;
+    justify-content: center;
+    margin: 24px 0;
+}
