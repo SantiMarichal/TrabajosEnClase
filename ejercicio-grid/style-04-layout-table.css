@@ -1,0 +1,160 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --color-primary: #ffcc00;
+    --color-dark: #333;
+    --color-dark-hover: #444;
+    --color-light: #f4f4f4;
+    --sm: 14px;
+    --md: 16px;
+}
+body {
+    display:grid;
+    grid-template-columns: 200px 1fr;/*fr es una unidad de grid fr=fraccion*/
+    grid-template-rows: auto 1fr auto; /*con auto el tamaño de la fila se ajusta al tamaño del contenido*/
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: var(--color-light);
+    grid-template-areas: 
+        "header header"
+        "aside main"
+        "footer footer";
+    gap:24px;
+}
+.header {
+    padding: 10px;
+    grid-area:header;
+}
+.navbar-left {
+    display: flex;
+    gap: 16px;
+
+}
+.navbar-left img {
+    border-radius: 12px;
+}
+.main-container h2 {
+    text-align: center;
+    padding-bottom: 20px;
+    font-weight: inherit;
+}
+.container {
+    display: flex;
+}
+.sidebar {
+    min-width: 200px; /* ¿Diferencia entre width y min-width? 
+    Antes teníamos: width: 200px; entonces necesitamos flex: 1;
+    pero con min-width no necesitamos flex: 1    
+    */
+    background-color: var(--color-dark);
+    color: white;
+    grid-area:aside;
+}
+.menu {
+    list-style: none;
+}
+.menu-item {
+    padding: 15px;
+    border-bottom: 1px solid #444;
+}
+.menu-item:hover {
+    background-color: var(--color-dark-hover);
+    cursor: pointer;
+}
+.menu-item:active {
+    background-color: var(--color-primary);
+    color: black;
+}
+.main-container {
+    padding: 20px;
+    min-width: 0;
+    grid-area:main;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+
+    gap: 24px;
+
+    flex-wrap: wrap;
+}
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+    height: auto;
+
+    text-align: center;
+
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+.card h2 {
+    margin-bottom: 10px;
+}
+.card img {
+    width: 128px;
+    height: 128px;
+}
+.card figcaption {
+    margin-bottom: 15px;
+}
+.card a {
+    background-color: var(--color-primary);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    color: black;
+    text-decoration: none;
+    font-size: var(--sm);
+    display: inline-block;
+}
+.card a:hover {
+    background-color: #e6b800;
+}
+.card a:active {
+    transform: scale(0.9);
+    background-color: #ac8900;
+}
+.section-table {
+    padding-top: 40px;
+}
+.table-container {
+    overflow-x: auto;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th {
+    background-color: var(--color-dark);
+    color: white;
+}
+/*
+2) Pseudo clase que selecciona el primer hijo del contenedor que tenga esa clase
+3) Pseudo clase que selecciona al último hijo del contenedor que tenga esa clase
+
+1) Pseudo clase que selecciona un hijo en particular o un grupo
+*/
+/* tbody tr:nth-child(odd) { */
+tbody tr:nth-child(even) { /* Estilos tipo cebra (zebra en inglés) de una tabla */
+    background-color: #bbb9;
+}
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+}
+tbody tr:hover {
+    background-color: #ddd;
+    cursor: pointer;
+}
+.footer {
+    text-align: center;
+    padding: 20px;
+    grid-area:footer;
+}

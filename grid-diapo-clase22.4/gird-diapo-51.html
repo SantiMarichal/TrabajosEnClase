@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        .parent {
+            background-color: coral;
+            height: 900px;
+            width: 800px;
+
+            display: grid;
+            /* grid-template-columns: 200px 200px 200px; */
+
+            /* La función repeat se utiliza con grid para indicarle el temaño que se repite */
+            grid-template-columns: repeat(2, 200px) 200px; 
+
+            /* grid-template-columns: 1fr 2fr 1fr; */
+
+            justify-content: center; /* Alineación horizontal de la grilla de grid */
+            align-content: center; /* Alineación vertical de la grilla de grid */
+            
+            grid-template-rows: 350px 350px;
+
+            justify-items: center; /* Alineación horizontal de los hijos dentro de la celda de la grilla */
+            align-items: center; /* Alineación vertical de los hijos dentro de la celda de la grilla */
+        }
+        .item {
+            background-color: #15857A;
+            border: 5px solid;
+            height: 200px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <section class="parent">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </section>
+</body>
+</html>
