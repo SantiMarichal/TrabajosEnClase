@@ -20,7 +20,7 @@ body {
     background-color: var(--color-light);
     grid-template-areas: 
         "header header"
-        "aside main"
+        "sidebar main"
         "footer footer";
     gap:24px;
 }
@@ -42,7 +42,7 @@ body {
     font-weight: inherit;
 }
 .container {
-    display: flex;
+    display: contents;
 }
 .sidebar {
     min-width: 200px; /* ¿Diferencia entre width y min-width? 
@@ -51,7 +51,7 @@ body {
     */
     background-color: var(--color-dark);
     color: white;
-    grid-area:aside;
+    grid-area:sidebar;
 }
 .menu {
     list-style: none;
