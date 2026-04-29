@@ -41,9 +41,7 @@ body {
     padding-bottom: 20px;
     font-weight: inherit;
 }
-.container {
-    display: contents;
-}
+
 .sidebar {
     min-width: 200px; /* ¿Diferencia entre width y min-width? 
     Antes teníamos: width: 200px; entonces necesitamos flex: 1;
