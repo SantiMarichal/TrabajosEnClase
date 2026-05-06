@@ -23,3 +23,37 @@ boton.addEventListener("click", () => (
 
 document.getElementById("btn-error").addEventListener("click" , () => {alert("Error 666")
 });
+/*
+var nombre = 'Salva';
+console.log(nombre);
+
+var nombre = 'Facu';
+console.log(nombre);
+
+let apellido = 'Choziñovic';
+console.log(apellido);
+
+let apellidoo = 'Cardozovic';
+console.log(apellido);
+*/
+
+function saludar (nombre){
+    return `hola ${nombre}`;
+} /*Es el parametro nombre*/ 
+
+const saludoo = (nombre) => {
+    return `hola ${nombre}`;
+};/*Es el parametro nombre*/
+
+console.log(saludar(nombre));
+console.log(saludoo(nombre));
+
+
+/*Objeto literal*/
+const pokemon = {
+    nombre:'pikachu',
+    tipo:'electrico'
+};
+console.log(pokemon.nombre);
+
+
