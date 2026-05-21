@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .pokemon-card {
+            background: coral;
+            padding: 20px;
+            border-radius: 10px;
+            width: 250px;
+
+            text-align: center;
+
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        }
+        .pokemon-card img {
+            width: 128px;
+            height: 128px;
+        }
+
+        .favorito {
+            background-color: gold;
+        }
+    </style>
+</head>
+<body>
+    <h2>querySelector</h2>
+
+    <button id="btn">Botón</button>
+
+    <button class="btn">Botón</button>
+
+    <h2>innerHTML vs textContent</h2>
+
+    <!-- Windows: Press Win + . or Win + ; to open the system emoji picker. -->
+    <div id="contenedorInnerHTML">
+        <p>Me van a borrar 😐</p>
+    </div>
+
+    <div id="txtXSS"></div>
+    <input type="text" name="" id="xss">
+
+    <h2>createElement y appendChild</h2>
+    <div id="createElem"></div>
+
+    <h2>classList</h2>
+    <div class="card" id="card-pikachu">
+        Pikachu
+    </div>
+
+    <button id="btn-favorito">
+        ☆ Favorito
+    </button>
+
+    <script src="main.js"></script>
+</body>
+</html>
