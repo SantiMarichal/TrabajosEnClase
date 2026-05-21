@@ -23,3 +23,12 @@ card.appendChild(nombre);
 card.appendChild(span);
 document.querySelector(`#contenedor-pokemon`).appendChild(card);
 
+const ul = document.createElement(`ul`);
+pikachu.habilidades.forEach((hab) => {
+    console.log(hab);
+    const li = document.createElement(`li`);
+    li.textContent=hab;
+    ul.appendChild(li);
+});
+card.appendChild(ul);
+
