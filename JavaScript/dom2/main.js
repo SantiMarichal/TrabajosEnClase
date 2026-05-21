@@ -32,7 +32,6 @@ titulo.textContent = `Soy un h3 creador de forma dinámica`
 
 card.appendChild(titulo);
 contenedor.appendChild(card);
-
 // 1. Crear elementos
 const card2 = document.createElement('div');
 const img2 = document.createElement('img');
