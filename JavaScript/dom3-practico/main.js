@@ -22,5 +22,4 @@ card.appendChild(img);
 card.appendChild(nombre);
 card.appendChild(span);
 document.querySelector(`#contenedor-pokemon`).appendChild(card);
-// 5. Agregar al DOM
 
