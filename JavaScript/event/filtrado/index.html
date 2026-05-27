@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="filtros">
+        <button class="btn-filtro activo" data-tipo="todos">Todos</button>
+        <button class="btn-filtro" data-tipo="fuego">Fuego</button>
+        <button class="btn-filtro" data-tipo="agua">Agua</button>
+        <button class="btn-filtro" data-tipo="planta">Planta</button>
+    </div>
+
+    <div id="galeria">
+        <div class="pokemon-card fuego" data-tipo="fuego">
+            <div class="icono">
+                <img src="icons/fire.svg" alt="">
+            </div>
+            <span class="nombre">Charizard</span>
+        </div>
+
+        <div class="pokemon-card agua" data-tipo="agua">
+            <div class="icono">
+                <img src="icons/water.svg" alt="">
+            </div>
+            <span class="nombre">Blastoise</span>
+        </div>
+
+        <div class="pokemon-card planta" data-tipo="planta">
+            <div class="icono">
+                <img src="icons/grass.svg" alt="">
+            </div>
+            <span class="nombre">Venusaur</span>
+        </div>
+
+        <div class="pokemon-card fuego" data-tipo="fuego">
+            <div class="icono">
+                <img src="icons/fire.svg" alt="">
+            </div>
+            <span class="nombre">Arcanine</span>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
