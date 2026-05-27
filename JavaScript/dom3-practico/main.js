@@ -32,3 +32,11 @@ pikachu.habilidades.forEach((hab) => {
 });
 card.appendChild(ul);
 
+function crearCard(pokemon){
+    // crear Card
+    const card = document.createElement(`div`);
+    card.classList.add(`pokemon-card`);
+
+    // 
+}
+
