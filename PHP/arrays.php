@@ -88,34 +88,31 @@ function contarMayores(array $personas): int
 
 echo "La cantidad de personas mayores de 18 son: " . contarMayores($personas) . "\n";
 
+//Mostrar la cantidad de personas en cada franja etaria
 function franjasEtarias(array $personas): array
 {
-    $nuevoo = [];
-    $contNiños=0;
-    $contAdolescencia=0;
-    $contJuventud=0;
-    $contAdultez=0;
-    $contVejez=0;
+    $resultado = [
+        "Niños" => 0,
+        "Adolescentes" => 0,
+        "Juventud" => 0,
+        "Adultez" => 0,
+        "Vejez" => 0
+    ];
     foreach($personas as $p){
-    if ($personas["edad"] <= 11 ){
-        $contNiños++;
-        $nuevoo[0] = $contNiños;
-    }elseif($personas["edad"]>=12 and $personas["edad"]<=18){
-        $contAdolescencia++;
-        $nuevoo[1] = $contAdolescencia;
-    }elseif($personas["edad"]>=19 and $personas["edad"]<=29){
-        $contJuventud++;
-        $nuevoo[2] = $contJuventud;
-    }elseif($personas["edad"]>=30 and $personas["edad"]<=60){
-        $contAdultez++;
-        $nuevoo[3] = $contAdultez;
-    }elseif($personas["edad"]>=61){
-        $contVejez++;
-        $nuevoo[4] = $contVejez;
-  }
+    if ($p["edad"] <= 11 ){
+        $resultado["Niños"]++;
+    }elseif($p["edad"]>=12 and $p["edad"]<=18){
+        $resultado["Adolescentes"]++;
+    }elseif($p["edad"]>=19 and $p["edad"]<=29){
+        $resultado["Juventud"]++;
+    }elseif($p["edad"]>=30 and $p["edad"]<=60){
+        $resultado["Adultez"]++;
+    }elseif($p["edad"]>=61){
+        $resultado["Vejez"]++;
+    }
 }
 
-    return $nuevoo; 
+    return $resultado; 
 }
 
 var_dump(franjasEtarias($personas));
