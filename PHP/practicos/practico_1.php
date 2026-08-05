@@ -35,30 +35,34 @@ evaluarEquipo($miEquipo);
 //EJERCICIO 2
 function entrenarPokemon(string $nombre, int $nivelInicial, int $nivelObjetivo, string $tipoEntrenamiento): void{
     echo "Ejercicio 2: Entrenamiento de Pokemon" . "Nombre del pokemon: $nombre" . "\n";
-    while($nivelInicial<=$nivelObjetivo){
+    $nivelActual=$nivelInicial;
+    while($nivelActual<=$nivelObjetivo){
     if ($tipoEntrenamiento=="suave"){
-        $nivelInicial++;
-        echo "El nivel actual es: $nivelInicial" . "\n";
-        if ($nivelInicial % 10 == 0){
+        $nivelActual++;
+        echo "El nivel actual es: $nivelActual" . "\n";
+        if ($nivelActual % 10 == 0){
             echo "El nivel actual es multiplo de 10" . "\n";
         }
     }elseif($tipoEntrenamiento=="medio"){
-        $nivelInicial=$nivelInicial+2;
-        echo "El nivel actual es: $nivelInicial";
-        if ($nivelInicial % 10 == 0){
+        $nivelActual=$nivelActual+2;
+        echo "El nivel actual es: $nivelActual";
+        if ($nivelActual % 10 == 0){
             echo "El nivel actual es multiplo de 10" . "\n";
         }
     }elseif($tipoEntrenamiento=="intenso"){
-        $nivelInicial=$nivelInicial+5;
-        echo "El nivel actual es: $nivelInicial" . "\n";
-        if ($nivelInicial % 10 == 0){
+        $nivelActual=$nivelActual+5;
+        echo "El nivel actual es: $nivelActual" . "\n";
+        if ($nivelActual % 10 == 0){
             echo "El nivel actual es multiplo de 10" . "\n";
         }
+    }else{
+        echo "Entrenamiento no válido.";
+        break;
     }
 }
 }
 
-entrenarPokemon("Charizard", 5, 70, "suave")
+entrenarPokemon("Charizard", 5, 70, "intenso")
 
 
 ?>
