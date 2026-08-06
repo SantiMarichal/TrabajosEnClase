@@ -98,5 +98,9 @@ function simularBatalla(array $pkmn1, array $pkmn2): void{
 
 simularBatalla($poke1, $poke2);
 
+//EJERCICIO 5:
+
+
+
 
 ?>
