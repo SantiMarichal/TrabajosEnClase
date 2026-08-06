@@ -28,8 +28,7 @@ function evaluarEquipo(array $miEquipo): void {
         echo $evolucion . "\n";
     }
 }
-
-evaluarEquipo($miEquipo);
+//evaluarEquipo($miEquipo);
 
 
 //EJERCICIO 2
@@ -61,8 +60,43 @@ function entrenarPokemon(string $nombre, int $nivelInicial, int $nivelObjetivo, 
     }
 }
 }
+//entrenarPokemon("Charizard", 5, 70, "intenso")
 
-entrenarPokemon("Charizard", 5, 70, "intenso")
+$poke1 = [
+    "nombre" => "Gengar",
+    "hp" => 50
+];
+$poke2 = [
+    "nombre" => "Alakazam",
+    "hp" => 50
+];
+
+//EJERCICIO 3
+
+function simularBatalla(array $pkmn1, array $pkmn2): void{
+    $hp1=$pkmn1["hp"];
+    $hp2=$pkmn2["hp"];
+    $nom1=$pkmn1["nombre"];
+    $nom2=$pkmn2["nombre"];
+    $turno=1;
+    do{
+        $damage=rand(5, 20);
+        echo "Turno: $turno" . "\n";
+        if($turno % 2 == 0){
+            $hp2-=$damage;
+            echo "$nom1 ataca a $nom2 causando $damage. HP de $nom2: $hp2" . "\n";
+            $turno++;
+        }else{
+            $hp1-=$damage;
+            echo "$nom2 ataca a $nom1 causando $damage. HP de $nom1: $hp1" . "\n" ;
+            $turno++;
+        }
+    }while($hp1>=0 && $hp2>=0);
+    $ganador1 = (($hp1<=0 && $hp2>=0)) ? "El ganador es $nom2" : "El ganador es $nom1" . "\n";
+    echo $ganador1;
+}
+
+simularBatalla($poke1, $poke2);
 
 
 ?>
