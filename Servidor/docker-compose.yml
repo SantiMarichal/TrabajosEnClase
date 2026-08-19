@@ -1,0 +1,27 @@
+services:
+  ejemplo_app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ejemploApi
+    ports:
+      - "3500:80"
+    depends_on:
+      - database
+
+  database:
+    image: mariadb
+    container_name: ejemploBD
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: bdejemplo
+      MYSQL_USER: usuario
+      MYSQL_PASSWORD: usupass
+    ports:
+      - "33060:3306"
+    volumes:
+      - db-volume:/var/lib/mysql
+      - ./backend/database/db.sql:/docker-entrypoint-initdb.d/bd.sql
+
+volumes:
+  db-volume:
