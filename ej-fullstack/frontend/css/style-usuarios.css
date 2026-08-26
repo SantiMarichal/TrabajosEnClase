@@ -1,0 +1,208 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #F4F1E9;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1F2937;
+}
+
+.header {
+    background-color: white;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.header h1 {
+    color: #15857A;
+    margin-bottom: 10px;
+}
+
+.informacion-usuario {
+    display: flex;
+    gap: 25px;
+}
+
+.informacion-usuario p {
+    font-size: 14px;
+}
+
+.informacion-usuario span {
+    font-weight: bold;
+}
+
+button {
+    background-color: #FF6A3B;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.panel {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.panel-header h2 {
+    color: #15857A;
+}
+
+.tabla-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: #15857A;
+    color: white;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+tbody tr:hover {
+    background-color: #F4F1E9;
+}
+
+/* Botones de la tabla */
+td button {
+    padding: 7px 10px;
+    font-size: 13px;
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal.mostrar {
+    display: flex;
+}
+
+.modal-contenido {
+    background-color: white;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.modal-header h2 {
+    color: #15857A;
+}
+
+.btn-cerrar {
+    background-color: transparent;
+    color: #666;
+    font-size: 28px;
+    padding: 0;
+    width: 35px;
+    height: 35px;
+}
+
+.btn-cerrar:hover {
+    background-color: #eee;
+    opacity: 1;
+}
+
+#formNuevoUsuario {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#formNuevoUsuario .campo {
+    display: flex;
+    flex-direction: column;
+}
+
+#formNuevoUsuario label {
+    margin-bottom: 5px;
+    color: #1F2937;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#formNuevoUsuario input, #formNuevoUsuario select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: inherit;
+}
+
+#formNuevoUsuario input:focus, #formNuevoUsuario select:focus {
+    outline: none;
+    border-color: #15857A;
+}
+
+.modal-acciones {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.btn-secundario {
+    background-color: #6B7280;
+}
+
+.btn-secundario:hover {
+    opacity: 0.9;
+}
+
+#mensajeNuevo {
+    text-align: center;
+    font-size: 14px;
+}

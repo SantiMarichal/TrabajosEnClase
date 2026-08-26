@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - Hospital de Clínicas</title>
+    <link rel="stylesheet" href="/ej-fullstack/frontend/css/style-login.css">
+</head>
+<body>
+    <main class="container">
+        <form class="login-form" id="loginForm">
+            <h1>Iniciar Sesión</h1>
+            <div class="campo">
+                <label for="usuario">Usuario</label>
+                <input type="text" id="usuario" name="usuario" required>
+            </div>
+            <div class="campo">
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Entrar</button>
+            
+            <p id="mensaje"></p>
+        </form>
+    </main>
+
+    <script src="/ej-fullstack/frontend/js/login.js"></script>
+</body>
+</html>
