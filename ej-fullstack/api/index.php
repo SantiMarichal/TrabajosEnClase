@@ -16,6 +16,13 @@ $segments = explode('/', trim($uri, '/'));
 
 // Remover "api" del inicio si existe
 // La idea es remover todo hasta quedarme con el recurso
+
+if ($segments[0] === 'Prog') {
+    array_shift($segments);
+}
+if ($segments[0] === 'TrabajosEnClase') {
+    array_shift($segments);
+}
 if ($segments[0] === 'ej-fullstack') {
     array_shift($segments);
 }

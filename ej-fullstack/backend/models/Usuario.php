@@ -11,7 +11,7 @@ class Usuario
     }
 
     public function crear(string $ci, string $nombre, string $apellido, string $user, string $pass, string $rol): bool {
-        $sql = 'INSERT INTO usuario(ci, nombre, apellido, user_name, pass, rol) VALUES (:ci, :nombre; :apellido, :user_name, :password, :rol';
+        $sql = 'INSERT INTO usuario(ci, nombre, apellido, user_name, pass, rol) VALUES (:ci, :nombre, :apellido, :user_name, :password, :rol)';
 
         $sentencia = $this->conexion->prepare($sql);
 
@@ -66,6 +66,12 @@ class Usuario
 
     // LOGIN
     public function login(string $user, string $pass): ?array {
-        
+        $sql = 'SELECT * FROM usuario WHERE user_name=:user AND pass=:pass';
+        $sentencia = $this->conexion->prepare($sql);
+        $sentencia->bindParam(":user", $user);
+        $sentencia->bindParam(":pass", $pass);
+        $sentencia->execute();
+        $usuario = ($sentencia->fetch(PDO::FETCH_ASSOC)) ?: null;
+        return $usuario ?: null;
     }
 }

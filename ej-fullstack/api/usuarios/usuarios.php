@@ -35,18 +35,27 @@ try {
             $ci = $datos['ci'];
             $nombre = $datos['nombre'];
             $apellido = $datos['apellido'];
-            $user_name = $datos['user_name'];
-            $password = $datos['password'];
+            $user = $datos['user'];
+            $password = $datos['pass'];
             $rol = $datos['rol'];
 
             $resultado = $usuario->crear(
                 $ci,
                 $nombre,
                 $apellido,
-                $user_name,
+                $user,
                 $password,
                 $rol
             );
+            if ($resultado){
+                http_response_code(201);
+                echo json_encode(['mensaje' => 'Usuario creado correctamente']);
+            }else{
+                http_response_code(500);
+                echo json_encode(['error' => 'No se pudo crear el usuario']);
+            }
+
+
             exit;
         case 'PUT':
             
@@ -58,5 +67,5 @@ try {
     }
 } catch (PDOException $e) {
     http_response_code(500);
-    echo json_encode(['error' => 'Error en la base de datos']);
+    echo json_encode(['error' => $e]);
 }
