@@ -4,12 +4,12 @@ document.addEventListener('DOMContentLoaded', cargarSesion);
 
 async function cargarSesion() {
     try {
-        const response = await fetch('/Prog/TrabajosEnClase/ej-fullstack/api/sesion');
+        const response = await fetch('/Prog/TrabajosEnClase/ej-fullstack/ej-fullstack/api/sesion');
 
         const datos = await response.json();
 
         if (!datos.autenticado) {
-            window.location.href = '/Prog/TrabajosEnClase/ej-fullstack/frontend/index.html';
+            window.location.href = '/Prog/TrabajosEnClase/ej-fullstack/ej-fullstack/frontend/index.html';
             return;
         }
 
@@ -34,7 +34,7 @@ async function cargarSesion() {
 
 async function cargarUsuarios() {
     try {
-        const response = await fetch('/Prog/TrabajosEnClase/ej-fullstack/api/usuarios');
+        const response = await fetch('/Prog/TrabajosEnClase/ej-fullstack/ej-fullstack/api/usuarios');
         const usuarios = await response.json();
         const tabla = document.getElementById('tablaUsuarios');
 
@@ -91,11 +91,11 @@ document.getElementById('btnLogout').addEventListener('click', logout);
 
 async function logout() {
     try {
-        await fetch('/Prog/TrabajosEnClase/ej-fullstack/api/logout', {
+        await fetch('/Prog/TrabajosEnClase/ej-fullstack/ej-fullstack/api/logout', {
             method: 'POST'
         });
 
-        window.location.href = '/Prog/TrabajosEnClase/ej-fullstack/frontend/index.html';
+        window.location.href = '/Prog/TrabajosEnClase/ej-fullstack/ej-fullstack/frontend/index.html';
 
     } catch (error) {
         console.error(error);
@@ -109,7 +109,7 @@ async function eliminarUsuario(ci) {
 
     try {
         const response =
-            await fetch(`/Prog/TrabajosEnClase/ej-fullstack/api/usuarios/${ci}`, {
+            await fetch(`/Prog/TrabajosEnClase/ej-fullstack/ej-fullstack/api/usuarios/${ci}`, {
                 method: 'DELETE'
             });
 
@@ -169,7 +169,7 @@ async function crearUsuario(event) {
     };
 
     try {
-        const response = await fetch('/Prog/TrabajosEnClase/ej-fullstack/api/usuarios/', {
+        const response = await fetch('/Prog/TrabajosEnClase/ej-fullstack/ej-fullstack/api/usuarios/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

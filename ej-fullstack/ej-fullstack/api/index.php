@@ -16,11 +16,13 @@ $segments = explode('/', trim($uri, '/'));
 
 // Remover "api" del inicio si existe
 // La idea es remover todo hasta quedarme con el recurso
-
 if ($segments[0] === 'Prog') {
     array_shift($segments);
 }
 if ($segments[0] === 'TrabajosEnClase') {
+    array_shift($segments);
+}
+if ($segments[0] === 'ej-fullstack') {
     array_shift($segments);
 }
 if ($segments[0] === 'ej-fullstack') {
@@ -32,6 +34,7 @@ if ($segments[0] === 'api') {
 
 $resource = $segments[0] ?? '';
 $id = $segments[1] ?? null;
+$subresource = $segments[2] ?? null;
 
 // Obtener datos del body para POST/PUT
 $input = json_decode(file_get_contents('php://input'), true) ?? [];

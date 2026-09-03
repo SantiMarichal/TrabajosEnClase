@@ -15,6 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 $datos = json_decode(file_get_contents('php://input'), true);
 
+// Corroborar que las claves 'user' y 'pass' estén en el array asoc de $datos
 if (!isset($datos['user']) || !isset($datos['pass'])) {
     http_response_code(400);
     echo json_encode(['error' => 'Debe ingresar usuario y contraseña']);
@@ -24,8 +25,7 @@ if (!isset($datos['user']) || !isset($datos['pass'])) {
 
 $usuario = new Usuario();
 
-$resultado = $usuario->login($datos['user'], $datos['pass']
-);
+$resultado = $usuario->login($datos['user'], $datos['pass']);
 
 if ($resultado === null) {
     http_response_code(401);

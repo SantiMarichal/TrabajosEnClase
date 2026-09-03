@@ -11,38 +11,42 @@ class Usuario
     }
 
     public function crear(string $ci, string $nombre, string $apellido, string $user, string $pass, string $rol): bool {
-        $sql = 'INSERT INTO usuario(ci, nombre, apellido, user_name, pass, rol) VALUES (:ci, :nombre, :apellido, :user_name, :password, :rol)';
+        // INSERT INTO usuario (ci, nombre, apellido, user_name, pass, rol) 
+        // VALUES ('11111111', 'Prueba', 'Gómez', 'prueba', '1234', 'admin');
+        $sql = "INSERT INTO usuario (ci, nombre, apellido, user_name, pass, rol)
+                VALUES (:ci, :nombre, :apellido, :user_name, :password, :rol)";
 
         $sentencia = $this->conexion->prepare($sql);
 
-        $sentencia -> bindParam(':ci', $ci);
-        $sentencia -> bindParam(':nombre', $nombre);
-        $sentencia -> bindParam(':apellido', $apellido);
-        $sentencia -> bindParam(':user_name', $user);
-        $sentencia -> bindParam(':password', $pass);
-        $sentencia -> bindParam(':rol', $rol);
-        return $sentencia -> execute();
+        $sentencia->bindParam(':ci', $ci);
+        $sentencia->bindParam(':nombre', $nombre);
+        $sentencia->bindParam(':apellido', $apellido);
+        $sentencia->bindParam(':user_name', $user);
+        $sentencia->bindParam(':password', $pass);
+        $sentencia->bindParam(':rol', $rol);
+
+        return $sentencia->execute();
     }
 
     // Obtener todos los usuarios
     public function obtenerTodos(): array {
-    // Escribimos como texto literal la consulta SQL    
+       // Escribimos como texto literal la consulta SQL
        $sql = 'SELECT * FROM usuario';
-        //Preparamos la sentencia
+
+       // Preparamos la consulta para ser ejecutada
        $sentencia = $this->conexion->prepare($sql);
 
-       //Ejecutamos la consulta
+       // Ejecutamos la consulta
        $sentencia->execute();
 
-        //Retornamos un array asociativo (FETCH_ASSOC)
+       // Retornamos un array asociativo (FETCH_ASSOC)
        return $sentencia->fetchAll(PDO::FETCH_ASSOC);
     }
 
     // Obtener usuario por CI
     public function obtenerPorCi(string $ci): ?array {
+        $sql = "SELECT * FROM usuario WHERE ci = :ci"; // :ci es un parámetro de la query
 
-        $sql = 'SELECT * FROM usuario WHERE ci= :ci'; //ci es un parametro de la query
-        
         $sentencia = $this->conexion->prepare($sql);
 
         $sentencia->bindParam(":ci", $ci);
@@ -51,8 +55,6 @@ class Usuario
 
         return ($sentencia->fetch(PDO::FETCH_ASSOC)) ?: null;
     }
-
-
 
     // Modificar usuario
     public function actualizar(string $ci, string $nombre, string $apellido, string $user, string $rol): bool {
@@ -66,12 +68,20 @@ class Usuario
 
     // LOGIN
     public function login(string $user, string $pass): ?array {
-        $sql = 'SELECT * FROM usuario WHERE user_name=:user AND pass=:pass';
+        $sql = "SELECT ci, nombre, apellido, user_name, rol
+                FROM usuario
+                WHERE user_name = :user
+                AND pass = :pass";
+
         $sentencia = $this->conexion->prepare($sql);
-        $sentencia->bindParam(":user", $user);
-        $sentencia->bindParam(":pass", $pass);
+
+        $sentencia->bindParam(':user', $user);
+        $sentencia->bindParam(':pass', $pass);
+
         $sentencia->execute();
-        $usuario = ($sentencia->fetch(PDO::FETCH_ASSOC)) ?: null;
+
+        $usuario = $sentencia->fetch(PDO::FETCH_ASSOC);
+
         return $usuario ?: null;
     }
 }

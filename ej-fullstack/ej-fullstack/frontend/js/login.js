@@ -9,7 +9,7 @@ formulario.addEventListener('submit', async (e) => {
     const pass = document.getElementById('password').value;
 
     try {
-        const response = await fetch('/Prog/TrabajosEnClase/ej-fullstack/api/login', {
+        const response = await fetch('/Prog/TrabajosEnClase/ej-fullstack/ej-fullstack/api/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -31,7 +31,7 @@ formulario.addEventListener('submit', async (e) => {
 
         console.log('Usuario:', datos.usuario);
 
-        window.location.href = '/Prog/TrabajosEnClase/ej-fullstack/frontend/html/usuarios.html';
+        window.location.href = '/Prog/TrabajosEnClase/ej-fullstack/ej-fullstack/frontend/html/usuarios.html';
     } catch (error) {
         console.error(error);
         mensaje.textContent = 'Error de conexión';
