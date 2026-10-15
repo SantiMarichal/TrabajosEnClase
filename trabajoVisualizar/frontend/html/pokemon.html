@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Pokédex</title>
+    <link rel="stylesheet" href="/frontend/css/style-pokemon.css">
+</head>
+<body>
+    <header class="header">
+        <div class="navbar-left">
+            <img src="https://placehold.co/32x32" alt="Logo">
+            <h1>Pokédex</h1>
+        </div>
+        <div class="informacion-usuario">
+            <p>Usuario: <span id="nombreUsuario"></span></p>
+            <p>Rol: <span id="rolUsuario"></span></p>
+            <button id="btnLogout">Cerrar sesión</button>
+        </div>
+    </header>
+    <div class="layout">
+        <aside class="sidebar">
+            <nav>
+                <ul class="menu">
+                    <li class="menu-item activo">
+                        <a href="#">Selección equipo</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="/frontend/html/pokemon-actual.html">Equipo actual</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="/frontend/html/historial.html">Historial</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-container">
+            <section class="panel">
+                <h2>Selecciona tu equipo</h2>
+                <div id="filtros">
+                    <button class="btn-filtro activo" data-tipo="todos">
+                        Todos
+                    </button>
+                    <button class="btn-filtro" data-tipo="fuego">
+                        Fuego
+                    </button>
+                    <button class="btn-filtro" data-tipo="agua">
+                        Agua
+                    </button>
+                    <button class="btn-filtro" data-tipo="planta">
+                        Planta
+                    </button>
+                </div>
+                <div class="equipo-panel">
+                    <div>
+                        <h3>Tu equipo</h3>
+                        <span id="contador-pokemon">0 / 5</span>
+                    </div>
+                    <button id="btn-guardar-equipo" disabled>
+                        Guardar equipo
+                    </button>
+                </div>
+                <div class="center-galeria">
+                    <div id="galeria">
+
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="/frontend/js/usuarios-main.js"></script>
+    <script src="/frontend/js/pokemon.js"></script>
+</body>
+</html>

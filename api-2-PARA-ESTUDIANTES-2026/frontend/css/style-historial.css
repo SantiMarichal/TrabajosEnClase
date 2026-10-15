@@ -1,0 +1,220 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #F4F1E9;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1F2937;
+    min-height: 100vh;
+}
+
+.header {
+    background-color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.navbar-left h1 {
+    color: #15857A;
+}
+
+/* Información de usuario */
+
+.informacion-usuario {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.informacion-usuario p {
+    font-size: 14px;
+}
+
+.informacion-usuario span {
+    font-weight: bold;
+}
+
+/* Botones */
+
+button {
+    background-color: #FF6A3B;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+
+/* Layout */
+
+.layout {
+    display: flex;
+    min-height: calc(100vh - 71px);
+}
+
+
+/* sidebar */
+
+.sidebar {
+    width: 220px;
+    background-color: #E2DED2;
+    color: #374151;
+    flex-shrink: 0;
+
+    border-right: 1px solid #D3CEC1;
+}
+
+.menu {
+    list-style: none;
+}
+
+.menu-item {
+    border-bottom: 1px solid #D3CEC1;
+}
+
+.menu-item a {
+    display: block;
+    padding: 16px 20px;
+    color: #374151;
+    text-decoration: none;
+    transition: background-color 0.2s ease,
+                color 0.2s ease;
+}
+
+
+.menu-item:hover {
+    background-color: #D5D0C3;
+}
+
+
+.menu-item.activo {
+    background-color: #15857A;
+}
+
+.menu-item.activo a {
+    color: white;
+    font-weight: bold;
+}
+
+
+/* main container */
+
+.main-container {
+    flex: 1;
+    padding: 30px;
+}
+
+
+/* Panel */
+
+.panel {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.panel h2 {
+    margin-bottom: 20px;
+}
+
+/* Tarjeta para subir PDF */
+
+.card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    margin-bottom: 25px;
+}
+
+.card h3 {
+    margin-bottom: 20px;
+    color: #1F2937;
+}
+
+
+/* Formulario */
+
+#formulario {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+
+/* Input para seleccionar archivo */
+
+#archivo {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #1F2937;
+    min-width: 400px;
+    max-width: 100%;
+}
+
+
+/* Botón interno del input file */
+
+#archivo::file-selector-button {
+    background-color: #FF6A3B;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-right: 12px;
+    transition: opacity 0.2s ease;
+}
+
+#archivo::file-selector-button:hover {
+    opacity: 0.9;
+}
+
+
+/* Mensajes de respuesta */
+
+#mensaje {
+    margin-top: 15px;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+
+/* Adaptación pantallas pequeñas */
+
+@media (max-width: 600px) {
+    #formulario {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #archivo {
+        width: 100%;
+    }
+
+    #formulario button {
+        align-self: flex-start;
+    }
+}

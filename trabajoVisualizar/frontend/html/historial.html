@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Pokédex</title>
+    <link rel="stylesheet" href="/frontend/css/style-historial.css">
+</head>
+<body>
+    <header class="header">
+        <div class="navbar-left">
+            <img src="https://placehold.co/32x32" alt="Logo">
+            <h1>Pokédex</h1>
+        </div>
+        <div class="informacion-usuario">
+            <p>Usuario: <span id="nombreUsuario"></span></p>
+            <p>Rol: <span id="rolUsuario"></span></p>
+            <button id="btnLogout">Cerrar sesión</button>
+        </div>
+    </header>
+    <div class="layout">
+        <aside class="sidebar">
+            <nav>
+                <ul class="menu">
+                    <li class="menu-item">
+                        <a href="/frontend/html/pokemon.html">Selección equipo</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="/frontend/html/pokemon-actual.html">Equipo actual</a>
+                    </li>
+                    <li class="menu-item activo">
+                        <a href="#">Historial</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-container">
+            <section class="panel">
+                <h2>Historial</h2>
+                
+                <!-- Subir pdf -->
+                <section class="card">
+                    <h3>Subir PDF</h3>
+                    <form id="formulario">
+                        <input type="file" id="archivo" accept="application/pdf" required>
+                        <button type="submit">Subir PDF</button>
+                    </form>
+                    <p id="mensaje"></p>
+                </section>
+
+                <!-- Listar -->
+                <section class="card">
+                    <h3>Documentos disponibles</h3>
+                    <div id="listaDocumentos"></div>
+                </section>
+
+                <!-- Vista -->
+                <section class="card">
+                    <h3>Visualizar PDF</h3>
+                    <iframe id="visorPDF" width="100%" height="600" hidden></iframe>
+                </section>
+            </section>
+        </main>
+    </div>
+
+    <script src="/frontend/js/usuarios-main.js"></script>
+    <script src="/frontend/js/documentos.js"></script>
+</body>
+</html>
