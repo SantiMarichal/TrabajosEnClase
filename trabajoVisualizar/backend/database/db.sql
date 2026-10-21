@@ -53,3 +53,27 @@ CREATE TABLE documento (
     ruta_archivo VARCHAR(1000),
     fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+CREATE TABLE IF NOT EXISTS preferencias_usuario (
+    ci_usuario VARCHAR(10) NOT NULL PRIMARY KEY,
+    generacion_favorita ENUM('1', '2', '3')
+        NOT NULL DEFAULT '1',
+    estilo_entrenador ENUM(
+        'coleccionista',
+        'combate',
+        'explorador'
+    ) NOT NULL DEFAULT 'coleccionista',
+
+    FOREIGN KEY (ci_usuario) REFERENCES usuario(ci) ON DELETE CASCADE
+);
+
+CREATE TABLE preferencias_tipo_pokemon (
+    ci_usuario VARCHAR(10) NOT NULL,
+    tipo_pokemon ENUM(
+        'normal', 'fuego', 'agua', 'planta', 'electrico', 'hielo', 'lucha',
+        'veneno', 'tierra', 'volador', 'psiquico', 'bicho', 'roca', 'fantasma',
+        'dragon', 'siniestro', 'acero'
+    ) NOT NULL,
+    PRIMARY KEY (ci_usuario, tipo_pokemon),
+    FOREIGN KEY (ci_usuario) REFERENCES preferencias_usuario(ci_usuario) ON DELETE CASCADE
+);

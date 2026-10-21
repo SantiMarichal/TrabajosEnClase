@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/frontend/css/style-preferencias.css">
+    <title>Preferencias</title>
+</head>
+<body>
+    <header class="header">
+        <div class="navbar-left">
+            <img src="https://placehold.co/32x32" alt="Logo">
+            <h1>Pokédex</h1>
+        </div>
+        <div class="informacion-usuario">
+            <p>Usuario: <span id="nombreUsuario"></span></p>
+            <p>Rol: <span id="rolUsuario"></span></p>
+            <button id="btnLogout" type="button">Cerrar sesión</button>
+        </div>
+    </header>
+    <div class="layout">
+        <aside class="sidebar">
+            <nav>
+                <ul class="menu">
+                    <li class="menu-item">
+                        <a href="/frontend/html/pokemon.html">Selección de equipo</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="/frontend/html/pokemon-actual.html">Equipo actual</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="/frontend/html/historial.html">Historial</a>
+                    </li>
+                    <li class="menu-item activo">
+                        <a href="/frontend/html/preferencias.html">Preferencias</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-container">
+            <section class="panel">
+                <div class="preferencias-encabezado">
+                    <h2>Preferencias del entrenador</h2>
+                    <p>Personaliza tu experiencia en la Pokédex. Selecciona tu generación favorita y tu estilo de entrenador.
+                    </p>
+                </div>
+                <form id="formPreferencias">
+                    <fieldset class="grupo-preferencias">
+                        <legend>Tu generación favorita</legend>
+                        <p class="descripcion-grupo">¿En qué región te gustaría vivir tus aventuras?</p>
+                        <div class="opciones-preferencias">
+                            <label class="opcion-preferencia">
+                                <input type="radio" name="generacion_favorita" value="1" checked required>
+                                <span class="opcion-contenido">
+                                    <span class="opcion-titulo">Generación I</span>
+                                    <span class="opcion-subtitulo">Kanto</span>
+                                    <span class="opcion-descripcion">La aventura original.</span>
+                                </span>
+                            </label>
+                            <label class="opcion-preferencia">
+                                <input type="radio" name="generacion_favorita" value="2" required>
+                                <span class="opcion-contenido">
+                                    <span class="opcion-titulo">Generación II</span>
+                                    <span class="opcion-subtitulo">Johto</span>
+                                    <span class="opcion-descripcion">Descubre nuevos Pokémon y regiones.</span>
+                                </span>
+                            </label>
+                            <label class="opcion-preferencia">
+                                <input type="radio" name="generacion_favorita" value="3" required>
+                                <span class="opcion-contenido">
+                                    <span class="opcion-titulo">Generación III</span>
+                                    <span class="opcion-subtitulo">Hoenn</span>
+                                    <span class="opcion-descripcion">Explora una región llena de naturaleza.</span>
+                                </span>
+                            </label>
+                        </div>
+                    </fieldset>
+                    <fieldset class="grupo-preferencias">
+                        <legend>Tu estilo de entrenador</legend>
+                        <p class="descripcion-grupo">¿Qué es lo que más disfrutas de Pokémon?</p>
+                        <div class="opciones-preferencias">
+                            <label class="opcion-preferencia">
+                                <input type="radio" name="estilo_entrenador" value="coleccionista" checked required>
+                                <span class="opcion-contenido">
+                                    <span class="opcion-titulo">Coleccionista</span>
+                                    <span class="opcion-descripcion">Capturar y completar tu colección de Pokémon.</span>
+                                </span>
+                            </label>
+                            <label class="opcion-preferencia">
+                                <input type="radio" name="estilo_entrenador" value="combate" required>
+                                <span class="opcion-contenido">
+                                    <span class="opcion-titulo">Combate</span>
+                                    <span class="opcion-descripcion">Crear equipos fuertes y superar desafíos.</span>
+                                </span>
+                            </label>
+                            <label class="opcion-preferencia">
+                                <input type="radio" name="estilo_entrenador" value="explorador" required>
+                                <span class="opcion-contenido">
+                                    <span class="opcion-titulo">Explorador</span>
+                                    <span class="opcion-descripcion">Recorrer regiones y descubrir nuevos lugares.</span>
+                                </span>
+                            </label>
+                        </div>
+                    </fieldset>
+                    <fieldset class="grupo-preferencias">
+                        <legend>Tipos de Pokémon</legend>
+                        <p class="descripcion-grupo">Selecciona uno o varios tipos de Pokémon que te gustaría encontrar.</p>
+                        <div class="opciones-tipos">
+                            <label class="opcion-tipo">
+                                <input type="checkbox" name="tipos_pokemon[]" value="normal">
+                                <span>Normal</span>
+                            </label>
+                            <label class="opcion-tipo">
+                                <input type="checkbox" name="tipos_pokemon[]" value="fuego">
+                                <span>Fuego</span>
+                            </label>
+                            <label class="opcion-tipo">
+                                <input type="checkbox" name="tipos_pokemon[]" value="agua">
+                                <span>Agua</span>
+                            </label>
+                            <label class="opcion-tipo">
+                                <input type="checkbox" name="tipos_pokemon[]" value="planta">
+                                <span>Planta</span>
+                            </label>
+                            <label class="opcion-tipo">
+                                <input type="checkbox" name="tipos_pokemon[]" value="electrico">
+                                <span>Eléctrico</span>
+                            </label>
+                            <label class="opcion-tipo">
+                                <input type="checkbox" name="tipos_pokemon[]" value="hielo">
+                                <span>Hielo</span>
+                            </label>
+                            <label class="opcion-tipo">
+                                <input type="checkbox" name="tipos_pokemon[]" value="lucha">
+                                <span>Lucha</span>
+                            </label>
+                            <label class="opcion-tipo">
+                                <input type="checkbox" name="tipos_pokemon[]" value="veneno">
+                                <span>Veneno</span>
+                            </label>
+                            <label class="opcion-tipo">
+                                <input type="checkbox" name="tipos_pokemon[]" value="tierra">
+                                <span>Tierra</span>
+                            </label>
+                            <label class="opcion-tipo">
+                                <input type="checkbox" name="tipos_pokemon[]" value="volador">
+                                <span>Volador</span>
+                            </label>
+                            <label class="opcion-tipo">
+                                <input type="checkbox" name="tipos_pokemon[]" value="psiquico">
+                                <span>Psíquico</span>
+                            </label>
+                            <label class="opcion-tipo">
+                                <input type="checkbox" name="tipos_pokemon[]" value="bicho">
+                                <span>Bicho</span>
+                            </label>
+                            <label class="opcion-tipo">
+                                <input type="checkbox" name="tipos_pokemon[]" value="roca">
+                                <span>Roca</span>
+                            </label>
+                            <label class="opcion-tipo">
+                                <input type="checkbox" name="tipos_pokemon[]" value="fantasma">
+                                <span>Fantasma</span>
+                            </label>
+                            <label class="opcion-tipo">
+                                <input type="checkbox" name="tipos_pokemon[]" value="dragon">
+                                <span>Dragón</span>
+                            </label>
+                            <label class="opcion-tipo">
+                                <input type="checkbox" name="tipos_pokemon[]" value="siniestro">
+                                <span>Siniestro</span>
+                            </label>
+                            <label class="opcion-tipo">
+                                <input type="checkbox" name="tipos_pokemon[]" value="acero">
+                                <span>Acero</span>
+                            </label>
+                        </div>
+                    </fieldset>
+                    <fieldset class="grupo-preferencias grupo-evolucionados">
+                        <legend>Evolución</legend>
+                        <label class="opcion-evolucionados">
+                            <input type="checkbox" id="soloEvolucionados" name="solo_evolucionados" value="1">
+                            <span class="evolucionados-texto">
+                                <strong>Mostrar solamente Pokémon evolucionados</strong>
+                                <small>Excluye las formas que todavía pueden evolucionar.</small>
+                            </span>
+                        </label>
+                    </fieldset>
+                    <div class="acciones-preferencias">
+                        <button type="submit" id="btnGuardarPreferencias">Guardar preferencias</button>
+                    </div>
+                    <p id="mensajePreferencias" class="mensaje-preferencias" role="status" aria-live="polite"></p>
+                </form>
+            </section>
+        </main>
+    </div>
+    <script src="/frontend/js/usuarios-main.js"></script>
+    <script src="/frontend/js/preferencias.js"></script>
+</body>
+</html>

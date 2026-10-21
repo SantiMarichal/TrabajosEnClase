@@ -141,7 +141,8 @@ switch ($metodo) {
                 tmp_name: el archivo aún no está uploads/pdf/2026/. PHP lo almacena temporalmente mientras procesa la petición
             */
 
-
+        // Se responde mensaje de error cuando ocurre un error de subida del archivo al srv
+        // no(UPLOAD_ERR_OK no ocurrio ningun error) -> (ocurrio algún error)
         if ($archivo["error"] !== UPLOAD_ERR_OK) {
             responderJson([
                 "error" => "Se produjo un error al subir el archivo"
@@ -154,6 +155,8 @@ switch ($metodo) {
                 "error" => "El archivo recibido no es válido"
             ], 400);
         }
+
+        // is_uploaded_file($archivo["tmp_name"] = true || $archivo["size"] > 0
 
         // Se comprueba tamaño del archivo
         if ($archivo["size"] > $tamañoMaximo) {

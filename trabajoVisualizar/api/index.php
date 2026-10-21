@@ -63,6 +63,10 @@ switch ($resource) {
         require_once __DIR__ . '/documentos.php';
         exit;
 
+    case 'preferencias':
+        require_once __DIR__ . '/preferencias.php';
+        exit;
+
     default:
         http_response_code(404);
         header('Content-Type: application/json; charset=utf-8');
